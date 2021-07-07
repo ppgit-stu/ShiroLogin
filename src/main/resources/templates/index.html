@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户操作</title>
+</head>
+<body>
+<!--<div shiro:hasPermission="inside"></div>-->
+进入园区功能：<a href="/inside">进入园区</a>
+<br><br>
+<!--<div shiro:hasPermission="chat"></div>-->
+进入聊天功能：<a href="/chat">打声招呼</a>
+<!--<a href="/login">登录</a>-->
+<br><br>
+
+<div th:if="${username} !=null">
+    <span>您好，</span>
+    <td th:text="${username!=null}?${username}"/>
+    <span>欢迎登录！</span>
+    <a href="/logout">退出登录</a>
+</div>
+</body>
+</html>

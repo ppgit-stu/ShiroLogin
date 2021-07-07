@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome login!</title>
+
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <link th:href="@{/lib/bootstrap-3.3.7/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/lib/bootstrap-3.3.7/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body>
+<form id="form" name="form" accept-charset="utf-8"  action="/logingo" method="post" onSubmit="javascript:return check_login();">
+    <div class="container">
+        <div class="form row">
+            <div class="form-horizontal col-md-offset-3" id="login_form">
+                <h3 class="form-title">LOGIN</h3>
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <i class="fa fa-user fa-lg"></i>
+                        <input class="form-control required" type="text" placeholder="Username" id="name" name="name" autofocus="autofocus" maxlength="20"/>
+                    </div>
+                    <p th:text="${msg}" style="color: red" align="center"/>
+                    <div class="form-group">
+                        <i class="fa fa-lock fa-lg"></i>
+                        <input class="form-control required" type="password" placeholder="Password" id="password" name="password" maxlength="50"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox">
+                            <input type="checkbox" name="remember" value="1"/>记住我
+                        </label>
+                    </div>
+                    <div class="form-group col-md-offset-9">
+                        <button type="submit" class="btn btn-success pull-right" name="submit">登录</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+
+<script type="text/javascript" async>
+    function check_login()
+    {
+        if(document.form.name.value=="")/*document.表单名.文本域名.value==''"*/
+        {
+            alert("请检查用户名是否为空！");
+            return false;
+        }
+        if(document.form.password.value=="")
+        {
+            alert("请检查您的密码是否为空！");
+            return false;
+        }
+        /*
+        if(document.form.password.value.length < 6)
+        {
+            alert("您的密码长度小于6！");
+            return false
+        }
+        */
+    }
+</script>
+</html>

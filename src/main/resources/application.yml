@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    name: ztfzxsjyjy
+    url: jdbc:mysql://localhost:3306/shiroLogin?serverTimezone=UTC #url
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    cache: false
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.shiroLogin.entity
